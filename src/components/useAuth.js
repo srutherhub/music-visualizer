@@ -11,11 +11,13 @@ export default function useAuth(code) {
   const [expiresIn,setExpireIn] = useState();
 
   useEffect(()=>{
+    // Axios is essentially a fetch request
     axios.post(SERVER_URL+"/login",{
       code
     }).then(res => {
       console.log(res.data)
     })
+    .catch(()=> window.location = "/")
 
   },[code])
 
