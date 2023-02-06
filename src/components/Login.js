@@ -9,8 +9,8 @@ export default function Login() {
   const accessToken = useAuth(code);
   return (
     <div>
-      {code.length > 0 ? (
-        <button>Logout</button>
+      {code != undefined ? (
+       code
       ) : (
         <a href={AUTH_ENDPOINT}>
           <button>Login</button>
