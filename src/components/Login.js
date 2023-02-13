@@ -7,7 +7,6 @@ const code = new URLSearchParams(window.location.search).get("code");
 export default function Login(props) {
   const { setAccessToken } = props;
   const accessToken = useAuth(code);
-
   useEffect(() => {
     setAccessToken(accessToken);
   });
@@ -16,8 +15,8 @@ export default function Login(props) {
 
   return (
     <div>
-      {code !== undefined ? (
-        code
+      {code !== null ? (
+        <button>Logout</button>
       ) : (
         <a href={AUTH_ENDPOINT}>
           <button>Login</button>
@@ -26,3 +25,4 @@ export default function Login(props) {
     </div>
   );
 }
+

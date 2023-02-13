@@ -5,11 +5,31 @@ import Current from "./Current";
 
 function Spotify() {
   const [accessToken, setAccessToken] = useState("");
-  console.log(accessToken);
+  const [searchResults, setSearchResults] = useState([]);
+  const [playingTrack, setPlayingTrack] = useState();
+  const [search, setSearch] = useState("");
+
+  const chooseTrack = (track) => {
+    setPlayingTrack(track);
+    setSearch("");
+  };
 
   return (
     <div>
       <Login setAccessToken={setAccessToken} />
+      <Search
+        accessToken={accessToken}
+        search={search}
+        setSearch={setSearch}
+        setSearchResults={setSearchResults}
+        searchResults={searchResults}
+        chooseTrack={chooseTrack}
+      />
+      <Current
+        accessToken={accessToken}
+        uri={playingTrack?.uri}
+        searchResults={searchResults}
+      />
     </div>
   );
 }
