@@ -1,0 +1,97 @@
+:root{
+  --brightRed:#CD1F08;
+  --lightRed:#D65948;
+  --medGrey:#333333;
+  --darkGrey:#0A0A0A;
+  --lightGrey:#575757;
+}
+
+.Spotify{
+  display: grid;
+  grid-template-rows: 5vh 5vh 80vh 8vh;
+  background-color: var(--medGrey);
+  margin: 1vh;
+  border-radius: 10px;
+}
+ .Current{
+  display: grid;
+  align-self: end;
+  margin: 5px;
+  margin-bottom: 10px;
+} 
+.SpotifyWebPlayer{
+  width:23.5vw;
+}
+.Scroll{
+  overflow: scroll;
+  border-radius: 10px;
+}
+
+.CurrentImg{
+  width:300px;
+}
+
+.SongSearches{
+  display: flex;
+  flex-direction: row;
+  background-color: var(--darkGrey);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.SongSearches:hover{
+  border: 2px solid var(--brightRed);
+}
+.TitleArtist{
+  display: grid;
+  align-content: center;
+  color:var(--lightGrey);
+  margin: 5px;
+  padding:5px;
+}
+
+.Login{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login button{
+  font-size: 16px;
+  border-radius: 5px;
+  border-color: black;
+  background-color: var(--lightGrey);
+  width: 15vw;
+  height: 25px;
+}
+.Login button:hover{
+  border: 2px solid var(--brightRed);
+}
+
+.SearchBar{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchBar input{
+  font-size: 16px;
+  border-radius: 5px;
+  border-color: black;
+  background-color: var(--lightGrey);
+  width: 23vw;
+  height: 25px;
+}
+.SearchBar input::placeholder{
+  color:black
+}
+
+.SearchBar input:focus{
+  background-color: rgb(153, 153, 153);
+}
+
+.SearchBar input:hover{
+  border: 2px solid var(--brightRed);
+}
+

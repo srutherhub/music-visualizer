@@ -16,7 +16,7 @@ export default function Login(props) {
   return (
     <div>
       {code !== null ? (
-        <button>Logout</button>
+        <button onClick={()=>window.location.reload()}>Logout</button>
       ) : (
         <a href={AUTH_ENDPOINT}>
           <button>Login</button>

@@ -1,3 +1,14 @@
 html * {
-  font-family:monospace
+  font-family: 'Roboto', sans-serif;
 }
+body{
+  margin: 0;
+  padding: 0;
+}
+.App{
+  display:grid;
+  grid-template-columns: 25vw 75vw;
+  grid-template-rows: auto;
+  background-color: #0C0908;
+}
+

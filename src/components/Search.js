@@ -48,18 +48,8 @@ export default function Search(props) {
   }, [search, accessToken]);
 
   return (
-    <div>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <input
-          type="text"
-          name="search"
-          placeholder="Search Song or Artist"
-          value={search}
-          autoComplete="off"
-          onChange={(e) => setSearch(e.target.value)}
-        ></input>
-      </form>
-      <div className="songs">
+    <div className="Songs">
+
         {searchResults.map((track) => (
           <DisplayPlayTracks
             chooseTrack={chooseTrack}
@@ -67,7 +57,6 @@ export default function Search(props) {
             key={track.uri}
           />
         ))}
-      </div>
     </div>
   );
 }

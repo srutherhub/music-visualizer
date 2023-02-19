@@ -15,9 +15,9 @@ export default function Current(props) {
 
   if (!accessToken) return null;
   return (
-    <div>
-      <img src={currentImg} />
+    <div className="SpotifyWebPlayer">
       <SpotifyPlayer
+      styles={{bgColor:"#0A0A0A",trackNameColor:"#575757",trackArtistColor:"#333333"}}
         token={accessToken}
         uris={uri ? [uri] : []}
         play={play}
@@ -25,6 +25,10 @@ export default function Current(props) {
           if (!state.isPlaying) setPlay(false);
         }}
       />
+      {/* <div>
+        {" "}
+        <img src={currentImg} className="CurrentImg" />
+      </div> */}
     </div>
   );
 }
