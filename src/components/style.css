@@ -17,13 +17,15 @@
   display: grid;
   align-self: end;
   margin: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 } 
 .SpotifyWebPlayer{
-  width:23.5vw;
+  width:23.3vw;
+
 }
 .Scroll{
   overflow: scroll;
+
   border-radius: 10px;
 }
 
@@ -37,7 +39,7 @@
   background-color: var(--darkGrey);
   border-radius: 5px;
   margin: 5px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .SongSearches:hover{

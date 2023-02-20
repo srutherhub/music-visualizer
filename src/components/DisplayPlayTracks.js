@@ -11,7 +11,7 @@ export default function DisplayPlayTracks(props) {
       className="SearchesContainer"
     >
       <div key={track.uri} className="SongSearches">
-        <img src={track.imageUrl} alt={track.songTitle} style={{ width: 64 }} />
+        <img src={track.imageUrl} alt={track.songTitle} style={{ width: 64}} />
 
         <div className="TitleArtist">
           <div style={{fontSize:"16px",color:"#969696"}}>{track.songTitle}</div>

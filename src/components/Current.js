@@ -17,7 +17,7 @@ export default function Current(props) {
   return (
     <div className="SpotifyWebPlayer">
       <SpotifyPlayer
-      styles={{bgColor:"#0A0A0A",trackNameColor:"#575757",trackArtistColor:"#333333"}}
+      styles={{bgColor:"#0A0A0A",trackNameColor:"#575757",trackArtistColor:"#333333",sliderColor:"#D65948"}}
         token={accessToken}
         uris={uri ? [uri] : []}
         play={play}
