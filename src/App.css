@@ -1,14 +1,29 @@
 html * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-body{
+body {
   margin: 0;
   padding: 0;
+  background-color: #0a0a0a;
 }
-.App{
-  display:grid;
+.App {
+  display: grid;
   grid-template-columns: 25vw 75vw;
   grid-template-rows: auto;
-  background-color: #0C0908;
+  /* background-color: #0a0a0a; */
+  background-image: linear-gradient(
+    to right top,
+    #d65948,
+    #bc4d5c,
+    #994865,
+    #734563,
+    #514054,
+    #413947,
+    #343138,
+    #292929,
+    #222222,
+    #1b1b1b,
+    #141414,
+    #0a0a0a
+  );
 }
-

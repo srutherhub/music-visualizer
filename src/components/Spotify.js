@@ -14,7 +14,6 @@ function Spotify(props) {
   const [playingTrack, setPlayingTrack] = useState();
   const [search, setSearch] = useState("");
 
-
   const chooseTrack = (track) => {
     setPlayingTrack(track);
     //CLEARS SONG SEARCHES ON SELECT
