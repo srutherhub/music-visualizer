@@ -21,7 +21,7 @@ export default function Current(props) {
           bgColor: "#0A0A0A",
           trackNameColor: "#575757",
           trackArtistColor: "#333333",
-          sliderColor: "#D65948",
+          sliderColor: "rgb(72, 214, 74)",
         }}
         layout={"responsive"}
         inlineVolume={false}

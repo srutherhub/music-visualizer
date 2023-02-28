@@ -15,9 +15,8 @@ export default function Search(props) {
     searchResults,
     setSearchResults,
     search,
-    setSearch,
+    setAudioBeat,
     chooseTrack,
-    track,
   } = props;
   const [audioAnalysis, setAudioAnalysis] = useState({});
   const [audioFeatures, setAudioFeatures] = useState({});
@@ -54,6 +53,7 @@ export default function Search(props) {
   useEffect(() => {
     if(playingTrack === undefined) return;
     spotifyApi.getAudioAnalysisForTrack(playingTrack.id).then((response) => {
+      setAudioBeat(response.body.beats);
       setAudioAnalysis({
         tempo: response.body.track.tempo,
         tempo_confidence: response.body.track.tempo_confidence,

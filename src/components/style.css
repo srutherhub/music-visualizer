@@ -1,8 +1,8 @@
 :root {
-  --brightRed: #cd1f08;
-  --lightRed: #d65948;
-  --medGrey: rgb(51, 51, 51, 0.6);
-  --darkGrey: rgb(10, 10, 10, 0.6);
+  --brightGreen: #00d912;
+  --lightGreen: #48d64a;
+  --medGrey: rgba(51, 51, 51, 0.6);
+  --darkGrey: rgba(10, 10, 10, 0.6);
   --lightGrey: rgb(87, 87, 87, 0.6);
   --lightestGrey: rgb(150, 150, 150, 0.6);
 }
@@ -14,7 +14,8 @@
   margin: 1vh;
   /* border-radius: 10px; */
   border: 1px solid var(--lightGrey);
-  background-color: rgb(51, 51, 51, 0.5);
+  background-color: var(--medGrey);
+  
   /* background-image: linear-gradient(
     to left top,
     #d65948,
@@ -61,7 +62,7 @@
 }
 
 .SongSearches:hover {
-  border: 2px solid var(--brightRed);
+  border: 2px solid var(--brightGreen);
 }
 .TitleArtist {
   display: grid;
@@ -86,7 +87,7 @@
   height: 25px;
 }
 .Login button:hover {
-  border: 2px solid var(--brightRed);
+  border: 2px solid var(--brightGreen);
 }
 
 .SearchBar {
@@ -112,7 +113,7 @@
 }
 
 .SearchBar input:hover {
-  border: 2px solid var(--brightRed);
+  border: 2px solid var(--brightGreen);
 }
 
 ._VolumeRSWP {
@@ -125,9 +126,10 @@
 
 .Visualizer {
   display: grid;
-  grid-template-rows: 33vh 33vh 32vh;
+  grid-template-rows: 33vh 33vh 33vh;
   margin: 1vh;
   margin-left: 0;
+  
 }
 
 .Visualizer h1 {
@@ -140,8 +142,9 @@
   margin: 0;
 }
 .SongInfo img {
-  width: 32.7vh;
-  /* border-radius: 10px; */
+  width: 32.5vh;
+  border-radius: 10px;
+  
 }
 
 .SongInfo {
@@ -177,7 +180,7 @@
   width: 100%;
   height: 96%;
   margin: 5px;
-  /* border-radius: 5px; */
+  border-radius: 10px;
   background-color: var(--darkGrey);
 }
 
@@ -196,8 +199,59 @@
 .AnalysisData {
   background-color: var(--medGrey);
   border: 1px solid var(--lightGrey);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .AnalysisContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.AnalysisTitle {
+  color: var(--brightGreen);
+  margin: 20px;
+}
+
+.MusicData1 {
+  background-color: var(--darkGrey);
+  border: 1px solid var(--lightGrey);
+  border-radius: 10px;
+  height: 95%;
+}
+
+.MusicData2 {
+  background-color: var(--darkGrey);
+  border: 1px solid var(--lightGrey);
+  border-radius: 10px;
+  height: 95%;
+
+}
+.MusicData3 {
+  background-color: var(--darkGrey);
+  border: 1px solid var(--lightGrey);
+  border-radius: 10px;
+  height: 95%;
+
+}
+
+.MusicData1 div {
+  display: grid;
+  align-items: center;
+  color: var(--lightestGrey);
+  margin: 20px;
+}
+
+.MusicData2 div {
+  display: grid;
+  align-items: center;
+  color: var(--lightestGrey);
+  margin: 20px;
+}
+
+.MusicData3 div {
+  display: grid;
+  align-items: center;
+  color: var(--lightestGrey);
+  margin: 20px;
 }

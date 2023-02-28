@@ -7,6 +7,9 @@ function Visualizer(props) {
   //console.log(audioData);
   return (
     <>
+      <div>
+        <p style={{ color: "red" }}>testing</p>
+      </div>
       <div className="AnalysisData">
         <AnalysisData audioData={audioData} />
       </div>

@@ -4,11 +4,8 @@ import Login from "./Login";
 import Search from "./Search";
 import Current from "./Current";
 
-
-
-
 function Spotify(props) {
-  const {getAudioAnalysisData} = props;
+  const { getAudioAnalysisData, setAudioBeat } = props;
   const [accessToken, setAccessToken] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [playingTrack, setPlayingTrack] = useState();
@@ -26,14 +23,14 @@ function Spotify(props) {
         {" "}
         <Login setAccessToken={setAccessToken} />
       </div>
-      <div className='SearchBar'>
+      <div className="SearchBar">
         <SearchBar search={search} setSearch={setSearch} />
       </div>
       <div className="Scroll">
         <div className="Search">
           {" "}
           <Search
-          getAudioAnalysisData = {getAudioAnalysisData}
+            getAudioAnalysisData={getAudioAnalysisData}
             playingTrack={playingTrack}
             accessToken={accessToken}
             search={search}
@@ -41,6 +38,7 @@ function Spotify(props) {
             setSearchResults={setSearchResults}
             searchResults={searchResults}
             chooseTrack={chooseTrack}
+            setAudioBeat={setAudioBeat}
           />
         </div>
       </div>

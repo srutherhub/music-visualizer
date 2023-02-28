@@ -10,21 +10,23 @@ import Visualizer from "./components/Visualizer";
 
 function App() {
   const [audioData, setAudioData] = useState({});
+  const [audioBeat,setAudioBeat] = useState([]);
 
   //LIFTING AUDIO ANALYSIS DATA STATE FROM SPOTIFY -> SEARCH COMPONENT
   const getAudioAnalysisData = (one, two) => {
     setAudioData({ ...one, ...two });
   };
 
+  console.log(audioBeat[0])
   //console.log(audioData);
 
   return (
     <div className="App">
       <div className="Spotify">
-        <Spotify getAudioAnalysisData={getAudioAnalysisData} />
+        <Spotify getAudioAnalysisData={getAudioAnalysisData} setAudioBeat={setAudioBeat}/>
       </div>
       <div className="Visualizer" >
-        <Visualizer audioData={audioData} />
+        <Visualizer audioData={audioData} audioBeat={audioBeat}/>
       </div>
     </div>
   );

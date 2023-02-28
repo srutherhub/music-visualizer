@@ -2,37 +2,80 @@ import React from "react";
 
 export default function AnalysisData(props) {
   const { audioData } = props;
-  console.log(audioData);
+  //console.log(audioData);
+
   return (
     <div>
       <div className="AnalysisContainer">
-        <div>
+        <div className="AnalysisTitle">
           <h1>Analysis</h1>
         </div>
-        <div className="MusicData">
-          <div>Key: {audioData.key}</div>
-          <div>Key Confidence: {audioData.key_confidence}</div>
-          <div>Mode: {audioData.mode}</div>
-          <div>Mode Confidence: {audioData.mode_confidence}</div>
-          <div>Tempo: {audioData.tempo}</div>
-          <div>Tempo Confidence: {audioData.tempo_confidence}</div>
+        <div className="MusicData1">
+          <div>
+            {durToMin(audioData.duration) === undefined
+              ? ""
+              : "Duration: " + durToMin(audioData.duration)}
+          </div>
+          <div>Key: {keyFinder(audioData.key)}</div>
+          <div>Key Confidence: {percent(audioData.key_confidence)}</div>
+          <div>Mode: {audioData.mode === 1 ? "Major" : "Minor"}</div>
+          <div>Mode Confidence: {percent(audioData.mode_confidence)}</div>
+        </div>
+        <div className="MusicData2">
+          <div>Tempo: {Math.floor(audioData.tempo)}</div>
+          <div>Tempo Confidence: {percent(audioData.tempo_confidence)}</div>
           <div>Time Signature: {audioData.time_signature}</div>
           <div>
-            Time Signature Confidence: {audioData.time_signature_confidence}
+            Time Signature Confidence:{" "}
+            {percent(audioData.time_signature_confidence)}
           </div>
+          <div>Acousticness: {percent(audioData.acousticness)}</div>
         </div>
-        <div className="ExtraData">
-          <div>Acousticness: {audioData.acousticness}</div>
-          <div>Danceability: {audioData.danceability}</div>
-          <div>Energy: {audioData.energy}</div>
-          <div>Instrumentalness: {audioData.instrumentalness}</div>
-          <div>Liveness: {audioData.liveness}</div>
-          <div>valence: {audioData.valence}</div>
+        <div className="MusicData3">
+          <div>Danceability: {percent(audioData.danceability)}</div>
+          <div>Energy: {percent(audioData.energy)}</div>
+          <div>Instrumentalness: {percent(audioData.instrumentalness)}</div>
+          <div>Liveness: {percent(audioData.liveness)}</div>
+          <div>Valence: {percent(audioData.valence)}</div>
         </div>
       </div>
     </div>
   );
 }
+
+const durToMin = (duration) => {
+  if (duration === undefined) return;
+  const minutes = Math.floor(duration / 60);
+  const secPercent = (duration - minutes * 60) / 60;
+  let seconds = Math.floor(secPercent * 60);
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return `${minutes}:${seconds} min`;
+};
+
+const keyFinder = (num) => {
+  const keys = [
+    "C",
+    "C♯/D♭",
+    "D",
+    "D♯/E♭",
+    "E",
+    "F",
+    "F♯/G♭",
+    "G",
+    "G♯/A♭",
+    "A",
+    "A♯/B♭",
+    "B"
+  ];
+  if (num === -1) return "No Key Found";
+  return keys[num];
+};
+
+const percent = (num) => {
+  return Math.floor(num * 100) + "%";
+};
 
 // key: 7
 // key_confidence:0.076
