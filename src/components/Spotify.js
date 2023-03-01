@@ -1,15 +1,26 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import SpotifyWebApi from "spotify-web-api-node";
 import Login from "./Login";
 import Search from "./Search";
 import Current from "./Current";
+import { CLIENT_ID } from "../info";
 
-function Spotify(props) {
+const spotifyApi = new SpotifyWebApi({
+  clientId: CLIENT_ID,
+});
+
+export default function Spotify(props) {
   const { getAudioAnalysisData, setAudioBeat } = props;
   const [accessToken, setAccessToken] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [playingTrack, setPlayingTrack] = useState();
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    if (!accessToken) return;
+    spotifyApi.setAccessToken(accessToken);
+  }, [accessToken]);
 
   const chooseTrack = (track) => {
     setPlayingTrack(track);
@@ -51,11 +62,12 @@ function Spotify(props) {
           searchResults={searchResults}
         />
       </div>
+      <div>
+        <VolumeSlider />
+      </div>
     </>
   );
 }
-
-export default Spotify;
 
 function SearchBar(props) {
   const { search, setSearch } = props;
@@ -72,5 +84,29 @@ function SearchBar(props) {
         ></input>
       </form>
     </>
+  );
+}
+
+function VolumeSlider() {
+  const [volume, setVolume] = useState(50);
+
+  const handleVolume = (e) => {
+    setVolume(e.target.value);
+  };
+  //console.log(volume);
+  useEffect(() => {
+    spotifyApi.setVolume(volume)
+  }, [volume]);
+
+  return (
+    <div>
+      <input
+        type="range"
+        value={volume}
+        onChange={handleVolume}
+        min="1"
+        max="100"
+      />
+    </div>
   );
 }
