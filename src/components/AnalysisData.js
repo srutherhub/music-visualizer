@@ -3,7 +3,7 @@ import React from "react";
 export default function AnalysisData(props) {
   const { audioData } = props;
   //console.log(audioData);
-
+  // DATA LISTING
   return (
     <div>
       <div className="AnalysisContainer">

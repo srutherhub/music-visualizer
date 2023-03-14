@@ -30,6 +30,9 @@ export default function Spotify(props) {
 
   return (
     <>
+      <div className="AnalysisTitle">
+        <h1>Play</h1>
+      </div>
       <div className="Login">
         {" "}
         <Login setAccessToken={setAccessToken} />
@@ -88,18 +91,18 @@ function SearchBar(props) {
 }
 
 function VolumeSlider() {
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(100);
 
   const handleVolume = (e) => {
     setVolume(e.target.value);
   };
   //console.log(volume);
   useEffect(() => {
-    spotifyApi.setVolume(volume)
+    spotifyApi.setVolume(volume);
   }, [volume]);
 
   return (
-    <div>
+    <div className="VolumeSlider">
       <input
         type="range"
         value={volume}

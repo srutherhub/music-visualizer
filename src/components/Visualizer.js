@@ -7,15 +7,15 @@ function Visualizer(props) {
   //console.log(audioData);
   return (
     <>
-      <div>
+      {/* <div>
         <p style={{ color: "red" }}>testing</p>
-      </div>
+      </div> */}
       <div className="AnalysisData">
         <AnalysisData audioData={audioData} />
       </div>
-      <div className="SongInfo">
+      {/* <div className="SongInfo">
         <SongInfo audioData={audioData} />
-      </div>
+      </div> */}
     </>
   );
 }

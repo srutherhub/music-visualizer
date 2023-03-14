@@ -3,6 +3,7 @@ import "./components/style.css"
 import { useState } from "react";
 import Spotify from "./components/Spotify.js";
 import Visualizer from "./components/Visualizer";
+import ThreeD from "./components/ThreeD";
 
 /* REFERENCE VIDEO https://www.youtube.com/watch?v=Xcet6msf3eE&t=3142s */
 
@@ -17,11 +18,12 @@ function App() {
     setAudioData({ ...one, ...two });
   };
 
-  console.log(audioBeat[0])
+  //console.log(audioBeat[0])
   //console.log(audioData);
 
   return (
     <div className="App">
+      <div className="ThreeD"><ThreeD/></div>
       <div className="Spotify">
         <Spotify getAudioAnalysisData={getAudioAnalysisData} setAudioBeat={setAudioBeat}/>
       </div>

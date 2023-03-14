@@ -5,15 +5,22 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0a0a0a;
+  min-height:100vh;
 }
+
+#root{
+  height:100vh;
+}
+
 .App {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 25vw 75vw;
-  grid-template-rows: auto;
+  grid-template-rows: auto; */
   /* background-color: #0a0a0a; */
-  background-color: #e5e5f7;
+  /* background-color: #e5e5f7;
   opacity: 0.8;
   background-image:  radial-gradient(#00d912 0.5px, transparent 0.5px), radial-gradient(#00d912 0.5px, #0a0a0a 0.5px);
   background-size: 80px 80px;
-  background-position: 0 0,1000px 1000px;
+  background-position: 0 0,1000px 1000px; */
+  height:100%;
 }
