@@ -76,7 +76,7 @@ function SearchBar(props) {
   const { search, setSearch } = props;
   return (
     <>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form>
         <input
           type="text"
           name="search"
