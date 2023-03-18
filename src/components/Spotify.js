@@ -66,7 +66,7 @@ export default function Spotify(props) {
         />
       </div>
       <div>
-        <VolumeSlider />
+        <VolumeSlider accessToken={accessToken} />
       </div>
     </>
   );
@@ -90,14 +90,16 @@ function SearchBar(props) {
   );
 }
 
-function VolumeSlider() {
+function VolumeSlider(props) {
   const [volume, setVolume] = useState(100);
+  const { accessToken } = props;
 
   const handleVolume = (e) => {
     setVolume(e.target.value);
   };
   //console.log(volume);
   useEffect(() => {
+    if (!accessToken) return;
     spotifyApi.setVolume(volume);
   }, [volume]);
 
